@@ -23,19 +23,17 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/api/health", (req, res) => {
-  res.status(200).json({ status: "ok", message: "MockMate API is running" });
+  res.status(200).json({ status: "ok", message: "RecruitAI API is running" });
 });
 
 app.use("/api/auth", authRoutes);
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/ai", aiRoutes);
 
-// 404 handler
 app.use((req, res) => {
   res.status(404).json({ success: false, message: "Route not found" });
 });
 
-// Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ success: false, message: "Something went wrong on the server." });
@@ -43,5 +41,5 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 MockMate API listening on port ${PORT}`);
+  console.log(` RecruitAI API listening on port ${PORT}`);
 });

@@ -41,10 +41,10 @@ const seedDatabase = async () => {
       userId: user._id,
     });
 
-    console.log("✅ Seed data inserted successfully.");
+    console.log(" Seed data inserted successfully.");
     process.exit(0);
   } catch (error) {
-    console.error("❌ Seed failed:", error);
+    console.error(" Seed failed:", error);
     process.exit(1);
   }
 };
